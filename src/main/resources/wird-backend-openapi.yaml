@@ -1,0 +1,90 @@
+openapi: 3.0.0
+info:
+  title: Weather API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /weather/{location}:
+    get:
+      summary: Get weather data
+      parameters:
+        - name: santiago
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  time:
+                    type: string
+                  values:
+                    type: object
+                    properties:
+                      cloudCover:
+                        type: integer
+                      dewPoint:
+                        type: number
+                      freezingRainIntensity:
+                        type: integer
+                      humidity:
+                        type: integer
+                      precipitationProbability:
+                        type: integer
+                      pressureSurfaceLevel:
+                        type: number
+                      rainIntensity:
+                        type: integer
+                      sleetIntensity:
+                        type: integer
+                      snowIntensity:
+                        type: integer
+                      temperature:
+                        type: number
+                      temperatureApparent:
+                        type: number
+                      uvHealthConcern:
+                        type: integer
+                      uvIndex:
+                        type: integer
+                      visibility:
+                        type: number
+                      weatherCode:
+                        type: integer
+                      windDirection:
+                        type: number
+                      windGust:
+                        type: number
+                      windSpeed:
+                        type: number
+              example:
+                time: "2024-07-29T18:00:00Z"
+                values:
+                  cloudCover: 0
+                  dewPoint: 1.63
+                  freezingRainIntensity: 0
+                  humidity: 23
+                  precipitationProbability: 0
+                  pressureSurfaceLevel: 950.22
+                  rainIntensity: 0
+                  sleetIntensity: 0
+                  snowIntensity: 0
+                  temperature: 24.0
+                  temperatureApparent: 24.0
+                  uvHealthConcern: 1
+                  uvIndex: 2
+                  visibility: 16.0
+                  weatherCode: 1000
+                  windDirection: 259.88
+                  windGust: 3.69
+                  windSpeed: 3.69
+        '404':
+          description: No data available for Santiagos
+        '400':
+          description: Location parameter missing
