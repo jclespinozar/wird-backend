@@ -1,37 +1,40 @@
 # Weather API
 
-## Despliegue Local
+## Local Deployment
 
-Para desplegar la aplicación en local, sigue estos pasos:
+To deploy the application locally, follow these steps:
 
-### Prerrequisitos
+### Prerequisites
 
-Asegúrate de tener instalados los siguientes programas:
+Make sure you have the following programs installed:
 - [Docker](https://www.docker.com/products/docker-desktop)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 - [Gradle](https://gradle.org/install/)
 
-### Pasos
+### Steps
 
-1. **Descargar las dependencias de Gradle**:
+1. **Build the Docker image**:
 
-   Ejecuta el siguiente comando en el directorio raíz del proyecto para descargar todas las dependencias necesarias y generar los archivos .jar:
-   ./gradlew build
-2. **Construir la imagen de Docker**:
-
-   Ejecuta el siguiente comando en el directorio raíz del proyecto para construir la imagen de Docker:
+   Run the following command in the root directory of the project to build the Docker image
+   ```shell
    docker-compose build
-3. **Levantar la aplicación**:
+   ```
+2. **Start the application**:
 
-   Ejecuta el siguiente comando en el directorio raíz del proyecto para levantar la aplicación:
+   Run the following command in the root directory of the project to start the application
+    ```shell
    docker-compose up
-4. **Acceder a la aplicación**:
+   ```
+3. **Access the application**:
 
-   Accede a la aplicación a través de la siguiente URL:
+   Access the application through the following URL:
    http://localhost:8080/weather/{location}
-5. La documentación de la api esta disponible a traves de Swagger UI en la siguiente URL:
+4. **API documentation**:
+
+   The API documentation is available through Swagger UI at the following URL:
    http://localhost:8080/swagger
 
-Nota:
-•	Asegúrate de que los puertos configurados en los archivos de configuración no estén siendo utilizados por otros servicios en tu máquina.
-•	Puedes modificar la configuración de Redis en el archivo application.conf si es necesario.
+## Note:
+- Ensure that the ports configured in the configuration files are not being used by other services on your machine.	
+- You can modify the Redis configuration in the application.conf file if necessary.
+- You can also modify the *key* in the application.conf file if needed. To obtain your own key, you can sign up at Tomorrow.io to receive one.
